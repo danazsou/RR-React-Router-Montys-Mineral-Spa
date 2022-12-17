@@ -9,7 +9,10 @@ import Packages from './components/Packages'
 
 function App() {
 
-  const packages = ['Activate your Crystals', 'Monkey Meditation', 'Soak in the Hotsprings', 'Hypnotherapy', 'Mineral Bath']
+  const packages = ['Activate your Crystals', 
+                    'Monkey Meditation', 
+                    'Soak in the Hotsprings', 
+                    'Hypnotherapy', 'Mineral Bath']
 
   return (
     <div className="App">
@@ -31,7 +34,22 @@ function App() {
           </ul>
         </div>
 
-      </header> 
+        <div>
+          <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/packages" element={<Packages packages={packages}/>} />
+          </Routes>
+        </div>
+
+      
+       <Routes>
+          <Route path= "/"element={<Home/>}/>
+          <Route path="/about"element={<About/>} />
+          <Route path="/packages"element={<Packages packages={packages}/>}/>
+       </Routes>
+
+       </header>
       </Router>
     </div>
   );
